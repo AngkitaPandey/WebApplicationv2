@@ -13,9 +13,10 @@ namespace WebApplicationv2.Controllers
         public ActionResult Index()
         {
             var users = new List<User>();
-            users.Add(new User() {UserId = 1, FirstName = "John", LastName = "Smith", Email = "john5@gmail.com", Username = "john5"});
+            users.Add(new User() {UserId = 1, FirstName = "John", LastName = "Smith", Email = "john5@gmail.com", Username = "john5", Role = "Candidate"});
+            users.Add(new User() { UserId = 2, FirstName = "Sam", LastName = "Renold", Email = "sam12@gmail.com", Username = "sam12", Role = "Candidate" });
             return View(users);
-        }
+        }                               
 
         // GET: User/Details/5
         public ActionResult Details(int id)
@@ -36,6 +37,7 @@ namespace WebApplicationv2.Controllers
             try
             {
                 // TODO: Add insert logic here
+                var user = new User();
 
                 return RedirectToAction("Index");
             }
